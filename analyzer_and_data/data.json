@@ -1,0 +1,19 @@
+
+PUT http://localhost:9200/vca/key_terms/products
+{
+	"key_term":"products and FN15 and FN30",
+	"key_term_uri":"http://data.fanniemae.com/products"
+}
+
+PUT http://localhost:9200/vca/key_terms/settlement
+{
+	"key_term":"The Settlement Date",
+	"key_term_uri":"http://data.fanniemae.com/settlement"
+}
+
+PUT http://localhost:9200/vca/key_terms/coupon
+{
+	"key_term":"Coupon FN15",
+	"key_term_uri":"http://data.fanniemae.com/coupon"
+}
+

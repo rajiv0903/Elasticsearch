@@ -1,0 +1,26 @@
+PUT http://localhost:9200/vca
+_mapping/key_terms
+
+{
+  "key_terms": {
+    "properties": {
+      "key_term": {
+        "type": "text",
+        "index": true,
+        "copy_to": "key_term_full",
+        "analyzer": "basic_english",
+		"search_analyzer": "basic_english"
+      },
+      "key_term_uri": {
+        "type": "text",
+        "index": false
+      },
+      "key_term_full": {
+        "index": true,
+        "type": "text",
+        "analyzer": "ngram_english",
+		"search_analyzer": "ngram_english"
+      }
+    }
+  }
+}

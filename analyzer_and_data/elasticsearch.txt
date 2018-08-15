@@ -1,0 +1,10 @@
+http://www.elasticsearchtutorial.com/elasticsearch-in-5-minutes.html
+https://www.baeldung.com/elasticsearch-java
+
+
+
+Mapping:
+http://www.elasticsearch.org/guide/reference/mapping/
+
+Query DSL:
+http://www.elasticsearch.org/guide/reference/java-api/query-dsl-queries/

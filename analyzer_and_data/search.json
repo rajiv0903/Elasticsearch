@@ -1,0 +1,72 @@
+
+GET http://localhost:9200/vca/key_terms/_search?q=key_term:products
+
+POST http://localhost:9200/vca/key_terms/
+_search
+
+{
+  "query": {
+    "term": {
+      "key_term": "product"
+    }
+  }
+}
+
+POST http://localhost:9200/vca/key_terms/
+_search
+
+Wildcard:
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "wildcard": {
+            "key_term": "pr*"
+          }
+        }
+      ],
+      "must_not": [],
+      "should": []
+    }
+  },
+  "from": 0,
+  "size": 10,
+  "sort": [],
+  "aggs": {}
+}
+
+Fuzzy:
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "fuzzy": {
+            "key_term_full": {
+              "value": "pro",
+              "max_expansions": "2"
+            }
+          }
+        }
+      ],
+      "must_not": [],
+      "should": []
+    }
+  },
+  "from": 0,
+  "size": 10,
+  "sort": [],
+  "aggs": {}
+}
+
+
+
+http://localhost:9200/vca/
+_analyze
+
+{
+  "analyzer": "ngram_english",
+  "text": "Coupon FN15"
+}
